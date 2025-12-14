@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ion Storm</title>
+
+  <!-- Google Fonts: Outfit (UI) and Space Mono (Data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+          colors: {
+            // Deep Space Palette
+            void: '#020408',      // Absolute blackest blue
+            hull: '#0B101B',    // Dark structural grey/blue
+            dim: '#161e2e',       // Secondary UI background
+
+            // Accents
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+              900: '#164e63',
+            }
+          },
+          boxShadow: {
+            'glow-xs': '0 0 10px -2px rgba(6, 182, 212, 0.3)',
+            'glow-sm': '0 0 15px -3px rgba(6, 182, 212, 0.4)',
+            'glow-md': '0 0 25px -5px rgba(6, 182, 212, 0.5)',
+            'screen': 'inset 0 0 50px rgba(0,0,0,0.5)',
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)",
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #020408;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    /* Detailed Background Grid */
+    .bg-grid-tech {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(30, 41, 59, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 41, 59, 0.1) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    }
+
+    /* Custom Scrollbar - Slim & Clean */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0B101B;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06b6d4;
+    }
+
+    /* Animation Utilities */
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .animate-blink {
+      animation: blink 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+        "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root" class="relative min-h-screen bg-void"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
